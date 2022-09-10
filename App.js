@@ -6,14 +6,16 @@ import {
   TouchableOpacity,
   Text,
   Alert,
+  TextInput,
 } from "react-native";
+import LoginInput from "./app/components/Login";
 // import * as Notifications from 'expo-notifications';
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
 const AppButton = ({ onPress, title }) => (
   <TouchableOpacity
-    onPress={() => Alert.alert("Hello World")}
+    onPress={() => Alert.alert("To do register stuff")}
     style={styles.appButtonContainer}
   >
     <Text style={styles.appButtonText}>{title}</Text>
@@ -23,7 +25,14 @@ const AppButton = ({ onPress, title }) => (
 const App = () => {
   return (
     <View style={styles.screenContainer}>
-      <AppButton title="Hey there!" size="sm" backgroundColor="#007bff" />
+      <Text style={styles.welcomeText}>Welcome</Text>
+      <LoginInput />
+      <Text style={styles.forgotText} > Forgot Password? </Text>
+      <AppButton
+        title="New? Register here"
+        size="sm"
+        backgroundColor="#007bff"
+      />
     </View>
   );
 };
@@ -32,6 +41,7 @@ const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
     padding: 16,
   },
   appButtonContainer: {
@@ -39,7 +49,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#009688",
     borderRadius: 10,
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: "20%",
   },
   appButtonText: {
     fontSize: 18,
@@ -47,6 +57,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase",
+  },
+  forgotText: {
+    fontSize: 18,
+    alignSelf: "center",
+    padding: 10,
+  },
+  welcomeText: {
+    fontWeight: "bold",
+    alignSelf: "center",
+    fontSize: 24,
+    padding: 20,    
   },
 });
 
