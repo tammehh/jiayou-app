@@ -8,7 +8,7 @@ import {
   Alert,
   TextInput,
 } from "react-native";
-import LoginInput from "./app/components/Login";
+import LoginInput from "./Login";
 // import * as Notifications from 'expo-notifications';
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
