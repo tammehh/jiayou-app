@@ -9,7 +9,10 @@ import {
   TextInput,
 } from "react-native";
 import LoginInput from "./Login";
-// import * as Notifications from 'expo-notifications';
+import Home from "../app/index";
+import { auth, db, storage } from "../firebase.js";
+import RegisterUser from "./RegisterUser";
+
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
@@ -25,6 +28,7 @@ const AppButton = ({ onPress, title }) => (
 const App = () => {
   return (
     <View style={styles.screenContainer}>
+      <Home></Home>
       <Text style={styles.welcomeText}>Welcome</Text>
       <LoginInput />
       <Text style={styles.forgotText} > Forgot Password? </Text>
@@ -33,6 +37,7 @@ const App = () => {
         size="sm"
         backgroundColor="#007bff"
       />
+      <RegisterUser />
     </View>
   );
 };
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     alignSelf: "center",
     fontSize: 24,
-    padding: 20,    
+    padding: 20,
   },
 });
 

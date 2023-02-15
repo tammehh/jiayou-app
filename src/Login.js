@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
+import { auth, db, storage } from "../firebase.js";
 
 const LoginInput = () => {
   const [un, onChangeUN] = React.useState(null);
